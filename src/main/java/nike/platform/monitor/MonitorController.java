@@ -206,7 +206,7 @@ public class MonitorController {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         //MyIp myIp= IProxy.getIp();
         String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
-        String myPort = "24000";
+        int myPort = "24000";
         HttpGet httpget = new HttpGet("https://www.nike.com/cn/t/234234/"+style_color);
         httpget.setHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36");
         httpget.setHeader("referer", "http://www.nike.com");
@@ -233,7 +233,7 @@ public class MonitorController {
         String url= "https://api.nike.com/product_feed/threads/v2?filter=exclusiveAccess(true,false)&filter=channelId(d9a5bc42-4b9c-4976-858a-f159cf99c647)&filter=marketplace(CN)&filter=language(zh-Hans)&filter=publishedContent.subType(soldier,officer,nikeid_soldier,nikeid_officer)&filter=id("+detailUrlId+")&filter=productInfo.merchProduct.channels(NikeApp)";
         //MyIp myIp=IProxy.getIp();
         String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
-        String myPort = "24000";
+        int myPort = "24000";
         CloseableHttpResponse response=null;
         String result=null;
         try{
@@ -272,7 +272,7 @@ public class MonitorController {
         String url="https://api.nike.com/product_feed/threads/v2?filter=exclusiveAccess(true,false))&filter=channelId(d9a5bc42-4b9c-4976-858a-f159cf99c647)&filter=marketplace(CN)&filter=language(zh-Hans)&searchTerms="+style_color;
         //MyIp myIp=IProxy.getIp();
         String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
-        String myPort = "24000";        
+        int myPort = "24000";        
         CloseableHttpResponse response=null;
         String result=null;
         try{
