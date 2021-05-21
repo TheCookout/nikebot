@@ -78,7 +78,7 @@ public class BIGMonitor {
     private String getPageResult(String urlPath) throws IOException {
         //MyIp myIp=IProxy.getIp();
         String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
-        String myPort = "24000";
+        int myPort = 24000;
         if(myIp==null){
             logger.info("获取的ip是null的....");
         }else {

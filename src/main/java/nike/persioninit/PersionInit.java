@@ -48,7 +48,7 @@ public class PersionInit {
                 String Client_id=persion.getClient_id();
                 //MyIp myIp= IProxy.getIp();
                 String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
-                String myPort = "24000";
+                int myPort = 24000;
                 //httpclient = HttpClients.custom().setProxy(new HttpHost(myIp.getIp(),myIp.getPort())).build();
                 httpclient = HttpClients.custom().setProxy(new HttpHost(myIp,myPort)).build();
                 String authorization=login(Refresh_token,Client_id);
