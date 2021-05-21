@@ -1,4 +1,4 @@
-package nike.platform.monitor;
+/*package nike.platform.monitor;
 
 import nike.proxy.BotProxyRedisDao;
 //import nike.proxy.IProxy;
@@ -14,13 +14,10 @@ public class SorryTestControllerAPI {
     @Autowired
     BotProxyRedisDao botProxyRedisDao;
 
-    /***
-     *1 测试 监控的IP
-     */
     @RequestMapping("test")
     public String quantityLimit() {
         botProxyRedisDao.getIPs(0,3);
         return "";
     }
 
-}
+}*/
