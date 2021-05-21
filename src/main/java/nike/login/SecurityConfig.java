@@ -84,8 +84,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        // 存中创建了一个用户，该用户的名称为user，密码为password，用户角色为USER
-        // 对用户密码进行了加密
+        // A user is created in the storage. The name of the user is user, the password is password, and the user role is USER
+        // Encrypted user password
         auth.inMemoryAuthentication()
                 .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("123").password(new BCryptPasswordEncoder().encode("123")).roles("VIP1")
@@ -100,7 +100,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     public void configure(WebSecurity web) throws Exception {
-        // 设置拦截忽略url - 会直接过滤该url - 将不会经过Spring Security过滤器链
+        // Set interception to ignore url-the url will be filtered directly-it will not go through the Spring Security filter chain
 //        web.ignoring().antMatchers("/orderresult");
 //        web.ignoring().antMatchers("/orderresult");
         // 设置拦截忽略文件夹，可以对静态资源放行

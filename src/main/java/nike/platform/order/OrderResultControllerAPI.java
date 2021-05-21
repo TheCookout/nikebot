@@ -29,7 +29,7 @@ public class OrderResultControllerAPI {
                                @RequestParam(name = "size" ) String size,
                                @RequestParam(name = "promo" ) String promo
     ) {
-        System.out.println("开始回收...."+promo);
+        System.out.println("Start recycling..."+promo);
         try {
             if(orderNum!=null&&orderNum.length()>3){
                 orderDao.saveAndFlush(new Orders()
@@ -41,8 +41,8 @@ public class OrderResultControllerAPI {
                         .setStyleColor(styleColor)
                         .setSize(size)
                         .setOrderCreateTime(Time.createTime(0)));
-                System.out.println("添加订单.");
-                logger.info("将折扣码 设置为无效:"+promo);
+                System.out.println("Add an order.");
+                logger.info("Set the discount code to be invalid:"+promo);
                 promotionRedisDao.addInvalidpromotion(promo);
             }
         }catch (Exception e){

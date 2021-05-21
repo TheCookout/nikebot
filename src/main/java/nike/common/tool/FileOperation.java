@@ -12,7 +12,7 @@ import java.util.List;
 public class FileOperation {
 
 	/***
-	 * 根据参数路径遍历磁盘 获取文件列表
+	 * Traverse the disk according to the parameter path to obtain the file list
 	 */
 	private LinkedList<File> fileListG = new LinkedList<File>();
 
@@ -210,7 +210,7 @@ public class FileOperation {
 	}
 
 	/***
-	 * 根据需要查找的文件名字 在path下查找配置文件路径
+	 * According to the name of the file you need to find, find the configuration file path under path
 	 */
 	public String queryFilePath(String path, String propertyFileName) {
 		for (File file : new FileOperation().getFileList(path)) {

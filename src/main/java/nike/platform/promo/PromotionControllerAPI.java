@@ -21,7 +21,7 @@ public class PromotionControllerAPI {
 
     @RequestMapping("/promotionUpload")
     public String promotionUpload(@RequestParam("file") MultipartFile file) {
-        System.out.println("上传文件....>"+file.getName()+">"+file.getOriginalFilename());
+        System.out.println("upload files....>"+file.getName()+">"+file.getOriginalFilename());
         try{
             InputStream inputStream = file.getInputStream();
             List<String> list = importService.readFileLine(inputStream);
@@ -39,7 +39,7 @@ public class PromotionControllerAPI {
             e.printStackTrace();
         }
         System.out.println(file);
-        return "上传文件成功!";
+        return "File uploaded successfully!";
     }
 
 }

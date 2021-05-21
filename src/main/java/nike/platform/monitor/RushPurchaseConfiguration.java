@@ -6,8 +6,8 @@ import lombok.Setter;
 import java.util.List;
 
 /***
- * 这个类没有什么特别意义
- * 就是在监控页面添加任务的时候,作为对象传进来而已;
+ * This class has no special meaning
+* It is passed in as an object when adding a task on the monitoring page;
  */
 public class RushPurchaseConfiguration {
     @Getter

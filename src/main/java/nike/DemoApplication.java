@@ -1,6 +1,6 @@
 package nike;
 
-import nike.proxy.IProxy;
+//import nike.proxy.IProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,22 +33,22 @@ public class DemoApplication implements ApplicationRunner {
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-        System.out.println(">>>>>>>>>>>此为示例程序 严重阉割版本....>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println("阉割掉了，过akamai，破akamai，监控，热品补货提醒，bot全流程，登录等核心模块");
-        System.out.println(">>>>>>>>>>>需要程序请联系作者QQ:   80258153  >>>>>>>>>>>>>>>>>>>>>>>>>>");
-        System.out.println(">>>>>>>>>>>如要运行本示例，请先修改配置文件中的mysql,redis ip端口等配置信息");
-        System.out.println(">>>>>>>>>>>>>>>>用户名&密码  zuozhe   zuozhe  >>>>>>>>><<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>This is a sample program, severely castrated version....>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println("Castrated, pass akamai, break akamai, monitoring, hot product replenishment reminder, bot whole process, login and other core modules");
+        System.out.println(">>>>>>>>>>>Please contact the author QQ if you need a program:   80258153  >>>>>>>>>>>>>>>>>>>>>>>>>>");
+        System.out.println(">>>>>>>>>>>To run this example, please modify the mysql, redis ip port and other configuration information in the configuration file first");
+        System.out.println(">>>>>>>>>>>>>>>>Username Password  zuozhe   zuozhe  >>>>>>>>><<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
         SpringApplication.run(DemoApplication.class, args);
     }
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        if(ipPolicy!=8888)
-        IProxy.init(ipPolicy);
-        logger.info("初始化IP....");
-        if("platform".equals(role.trim())){
-            logger.info("大后台..开始启动.");
-        }
+        //if(ipPolicy!=8888)
+        //IProxy.init(ipPolicy);
+        //logger.info("initialization IP....");
+        //if("platform".equals(role.trim())){
+        //    logger.info("Backstage: start to start.");
+        //}
     }
 }

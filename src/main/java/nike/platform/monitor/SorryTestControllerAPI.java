@@ -1,8 +1,8 @@
 package nike.platform.monitor;
 
 import nike.proxy.BotProxyRedisDao;
-import nike.proxy.IProxy;
-import nike.proxy.MyIp;
+//import nike.proxy.IProxy;
+//import nike.proxy.MyIp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

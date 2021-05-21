@@ -7,9 +7,9 @@ import lombok.experimental.Accessors;
 import javax.persistence.*;
 
 /****
- *  人员管理;
- *  就是购买的账号;
- *  这里的主题设计思路就是凡是标记可用的，那么就一定要可用。
+* Personnel management;
+  * Is the purchased account;
+  * The theme design idea here is that wherever the mark is available, then it must be available.
  *
  *
  * */

@@ -56,10 +56,10 @@ public class Task {
     @Column(name = "size")
     private String size;
 
-    /***
-     * 购买数量
-     * 比如42尺码买2双;
-     */
+      /***
+      * Purchase quantity
+      * For example, buy 2 pairs in size 42;
+      */
     @Getter
     @Setter
     private Integer buyTotal;

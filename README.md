@@ -1,103 +1,102 @@
-# Nike web如何登陆|snkrs 协议登录|snkrs bot
+# How to log in Nike web|snkrs protocol login|snkrs bot
 
-## how to login nike|snkrs login|snkrs app|snkrs 破解|snkrs 协议下单|nike 协议下单|qq:80258153
-
-
-
-**联系方式**：->QQ 微信同号:80258153
+## how to login nike|snkrs login|snkrs app|snkrs crack|snkrs agreement order|nike agreement order|qq:80258153
 
 
 
-​        众所周知，如何用协议的方式登录nike web端，需要以下几部分，_abck，bmsz；
+**Contact information**: ->QQ WeChat same number: 80258153
 
-当然也可以说sensor-data；
 
-当然还有4.3号加入的x-kpsdk-ct、x-kpsdk-cd；那么我们逐项的说；
 
-1、abck，bmsz的方式登录，废话少说，我们直接上效果；
+​ As we all know, how to log in to the Nike web terminal by protocol requires the following parts, _abck, bmsz;
+
+Of course, you can also say sensor-data;
+
+Of course, there are also x-kpsdk-ct and x-kpsdk-cd that were added in 4.3; then we will say item by item;
+
+1. Log in by abck and bmsz, don't talk nonsense, we will directly get the effect;
 
 [![gYQoSx.png](https://z3.ax1x.com/2021/05/09/gYQoSx.png)](https://imgtu.com/i/gYQoSx)
 
-​	这里会遇到几个问题，分别是；abck，bmsz，和x-kpsdk-ct、x-kpsdk-cd
+​ There will be several problems here, namely; abck, bmsz, and x-kpsdk-ct, x-kpsdk-cd
 
-由于和之前帖子有重叠部分，我们就详细说一下abck，bmsz的生成原理；
+Due to the overlap with the previous post, let’s talk about the generation principle of abck and bmsz in detail;
 
-1、首先说，abck，bmsz的用途，基本上全篇无法绕过的是他从登录、到下单到底一系列流程。均会涉及到这两个值；也就是俗称到底过盾，这里主要探讨下他是如何才能过。
+1. First of all, the purpose of abck and bmsz is basically a series of processes from login to order placement. Both of these values ​​will be involved; that is, commonly known as the end shield, here we mainly discuss how he can pass.
 
-步骤
+step
 
-a、访问任意地址，获取abck,bmsz；
+a. Visit any address to get abck, bmsz;
 
-b、通过staticweb的GET,POST,POST请求去验证对应的sensor
+b. Verify the corresponding sensor through staticweb's GET, POST, and POST requests
 
-c、验证后，可用。
+c. After verification, it is available.
 
 
 
-那么在探讨sensor如何产生，其实我们很容易就可以看到sensor其实是staticweb的get请求的js；
+So when discussing how the sensor is generated, in fact, we can easily see that the sensor is actually the js of the staticweb get request;
 
-那么这里你会发现，实际上这里涉及非常非常多的fingerprint 也就是很多指纹信息；
+Then you will find here that actually there are a lot of fingerprints involved here, that is, a lot of fingerprint information;
 
-那么问题就衍生出2个问题；
+Then the problem derives 2 problems;
 
-1、如何模拟一个正确的sensor，和如何模拟多个sensor；
+1. How to simulate a correct sensor, and how to simulate multiple sensors;
 
 -----
 
-首先说如何模拟第一个sensor，这个又有N种方法，我先说个看起来最lowB的；
+Let me first talk about how to simulate the first sensor. There are N methods for this. Let me first talk about the one that looks the most lowB;
 
-也就是你只需要把这个js，反混淆一下。就可以基本上拿到比较可读的，然后在browser环境下执行即可；
+That is, you only need to de-obfuscate this js. You can basically get a more readable one, and then execute it in the browser environment;
 
-当然这里又涉及，他必须要两次sensor验证，而且第二个sensor的生成，需要第一个sensor的内容；
+Of course, it is involved here, he must verify the sensor twice, and the generation of the second sensor requires the content of the first sensor;
 
-我们完全可以在broswer环境执行两次即可；
+We can execute it twice in the broswer environment;
 
-2、写累了。而且有点跑题，我们接着说回登录。
+2. Tired of writing. And it's a bit off topic, let's go back to logging in.
 
-3、首先我们可以抓取一个登陆的数据包；
+3. First, we can grab a logged-in data packet;
 
 [![gYlJhR.png](https://z3.ax1x.com/2021/05/09/gYlJhR.png)](https://imgtu.com/i/gYlJhR)
 
 
 
-我们可以很清晰的看到，他有N个cookie和header，非常烦人；
+We can clearly see that he has N cookies and headers, which is very annoying;
 
-通过反复测试，我们可以确认基本上仅有四项是需要注意的，abck,bmsz、x-kpsdk-ct、x-kpsdk-cd
+Through repeated tests, we can confirm that there are basically only four items that need attention, abck, bmsz, x-kpsdk-ct, x-kpsdk-cd
 
-前面的abck、bmsz会造成403问题
+The previous abck and bmsz will cause 403 problems
 
-后面的x-kpsdk-ct、x-kpsdk-cd会造成429问题；
-
-
-
-流程：
-
-当我们准备好这四项的时候，只需要模拟数据包既可做到登录了；
+The following x-kpsdk-ct, x-kpsdk-cd will cause 429 problems;
 
 
 
-联系方式：->QQ 微信同号:80258153
+Process:
+
+When we are ready for these four items, we only need to simulate the data package to log in;
 
 
 
-**往期文章:**
-
-《nike app 协议登录|how to login nike app》
-
-《如何破429问题|how to create x-kpsdk-ct x-kpsdk-cd》
-
-《akamai如何生成|how to create akamai sensor data》
-
-《nike web 协议登录|how to login nike web》
+Contact: ->QQ WeChat same number: 80258153
 
 
 
-效果展示：
+**Previous articles:**
+
+"Nike app protocol login|how to login nike app"
+
+"How to break the 429 problem|how to create x-kpsdk-ct x-kpsdk-cd"
+
+"How to create akamai|how to create akamai sensor data"
+
+"Nike web protocol login|how to login nike web"
+
+
+
+Show results:
 
 [![gY3awD.png](https://z3.ax1x.com/2021/05/09/gY3awD.png)](https://imgtu.com/i/gY3awD)
 [![gY3dTe.png](https://z3.ax1x.com/2021/05/09/gY3dTe.png)](https://imgtu.com/i/gY3dTe)
 [![gY3UeO.png](https://z3.ax1x.com/2021/05/09/gY3UeO.png)](https://imgtu.com/i/gY3UeO)
-
 
 
 

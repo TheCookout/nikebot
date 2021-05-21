@@ -6,8 +6,8 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 import nike.common.tool.RegexParse;
 import nike.platform.persion.Persion;
-import nike.proxy.IProxy;
-import nike.proxy.MyIp;
+//import nike.proxy.IProxy;
+//import nike.proxy.MyIp;
 import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -27,8 +27,8 @@ import java.io.IOException;
 import java.util.List;
 
 /***
- * 账号初始化\也就是登录,然后获取人员信息；r
- * 然后同步到数据库;
+ * Account initialization\that is, log in, and then obtain personnel information; r
+ * Then synchronize to the database;
  */
 @Component
 public class PersionInit {
@@ -46,8 +46,11 @@ public class PersionInit {
             try {
                 String Refresh_token=persion.getRefresh_token();
                 String Client_id=persion.getClient_id();
-                MyIp myIp= IProxy.getIp();
-                httpclient = HttpClients.custom().setProxy(new HttpHost(myIp.getIp(),myIp.getPort())).build();
+                //MyIp myIp= IProxy.getIp();
+                String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
+                String myPort = "24000";
+                //httpclient = HttpClients.custom().setProxy(new HttpHost(myIp.getIp(),myIp.getPort())).build();
+                httpclient = HttpClients.custom().setProxy(new HttpHost(myIp,myPort)).build();
                 String authorization=login(Refresh_token,Client_id);
                 if(authorization.length()<50)
                     continue;
@@ -57,7 +60,7 @@ public class PersionInit {
                                 .setLastName(innerAccount.getLastName())
                                 .setPhoneNumber(innerAccount.getPhone())
                 );
-                System.out.println("更新");
+                System.out.println("Update");
             }catch (Throwable e){
                 logger.error("",e);
             }

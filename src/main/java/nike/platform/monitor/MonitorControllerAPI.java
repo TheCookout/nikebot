@@ -21,7 +21,7 @@ public class MonitorControllerAPI {
         JSONArray jsonArray=new JSONArray();
         for(int i=1;i<(limit+1);i++)
         jsonArray.put(i);
-        System.out.println("查询到的限购是"+limit);
+        System.out.println("The purchase restriction found is"+limit);
         return jsonArray.toString();
     }
 

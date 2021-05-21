@@ -27,7 +27,7 @@ public class PersionControllerAPI {
 
     @RequestMapping("/persionUpload")
     public String persionUpload(@RequestParam("file") MultipartFile file) {
-        System.out.println("上传文件....>"+file.getName()+">"+file.getOriginalFilename());
+        System.out.println("upload files....>"+file.getName()+">"+file.getOriginalFilename());
         try{
             InputStream inputStream = file.getInputStream();
             List<List<Object>> list = importService.getBankListByExcel(inputStream, file.getOriginalFilename());
@@ -72,7 +72,7 @@ public class PersionControllerAPI {
             e.printStackTrace();
         }
         System.out.println(file);
-        return "上传文件成功!";
+        return "The file upload is successful!";
     }
 
 

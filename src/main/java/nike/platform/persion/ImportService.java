@@ -27,7 +27,7 @@ public class ImportService {
         //创建Excel工作薄
         Workbook work = this.getWorkbook(in, fileName);
         if (null == work) {
-            throw new Exception("创建Excel工作薄为空！");
+            throw new Exception("Create Excel workbook is empty!");
         }
         Sheet sheet = null;
         Row row = null;
@@ -106,7 +106,7 @@ public class ImportService {
         } else if (".xlsx".equals(fileType)) {
             workbook = new XSSFWorkbook(inStr);
         } else {
-            throw new Exception("请上传excel文件！");
+            throw new Exception("Please upload an excel file!");
         }
         return workbook;
     }

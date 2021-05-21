@@ -6,8 +6,8 @@ import nike.monitor.BIGMonitorDao;
 import nike.platform.persion.PersionDao;
 import nike.platform.task.Task;
 import nike.platform.task.TaskDao;
-import nike.proxy.IProxy;
-import nike.proxy.MyIp;
+//import nike.proxy.IProxy;
+//import nike.proxy.MyIp;
 import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -123,7 +123,7 @@ public class MonitorController {
                         .setProductId(monitor.getProductId())
                 );
             }catch (Exception e){
-                logger.error("添加任务的时候违反唯一性约束,也就是同一个货号，尺码，人群购买!");
+                logger.error("When adding a task, it violates the uniqueness constraint, that is, the same item number, size, and crowd purchase!");
             }
         });
         return  "redirect:/monitor";
@@ -204,7 +204,9 @@ public class MonitorController {
 
     private  String  getDeatilUrlId(String style_color) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
-        MyIp myIp= IProxy.getIp();
+        //MyIp myIp= IProxy.getIp();
+        String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
+        String myPort = "24000";
         HttpGet httpget = new HttpGet("https://www.nike.com/cn/t/234234/"+style_color);
         httpget.setHeader("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36");
         httpget.setHeader("referer", "http://www.nike.com");
@@ -214,7 +216,8 @@ public class MonitorController {
         httpget.setHeader("accept-language", "zh-Hans-CN;q=1.0, en-CN;q=0.9");
         httpget.setHeader("content-type", "application/json; charset=utf-8");
         RequestConfig requestConfig = RequestConfig.custom()
-                .setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                //.setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                .setProxy(new HttpHost(myIp,myPort))//设置代理
                 .setConnectTimeout(5000)//设置连接超时时间,单位毫秒
                 .setSocketTimeout(5000)//设置读取超时时间,单位毫秒
                 .setConnectionRequestTimeout(5000)
@@ -228,7 +231,9 @@ public class MonitorController {
     private  String  getDeatiPage(String detailUrlId) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String url= "https://api.nike.com/product_feed/threads/v2?filter=exclusiveAccess(true,false)&filter=channelId(d9a5bc42-4b9c-4976-858a-f159cf99c647)&filter=marketplace(CN)&filter=language(zh-Hans)&filter=publishedContent.subType(soldier,officer,nikeid_soldier,nikeid_officer)&filter=id("+detailUrlId+")&filter=productInfo.merchProduct.channels(NikeApp)";
-        MyIp myIp=IProxy.getIp();
+        //MyIp myIp=IProxy.getIp();
+        String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
+        String myPort = "24000";
         CloseableHttpResponse response=null;
         String result=null;
         try{
@@ -241,7 +246,8 @@ public class MonitorController {
         httpget.setHeader("accept-language", "zh-Hans-CN;q=1.0, en-CN;q=0.9");
         httpget.setHeader("content-type", "application/json; charset=utf-8");
         RequestConfig requestConfig = RequestConfig.custom()
-                .setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                //.setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                .setProxy(new HttpHost(myIp,myPort))//设置代理
                 .setConnectTimeout(5000)//设置连接超时时间,单位毫秒
                 .setSocketTimeout(5000)//设置读取超时时间,单位毫秒
                 .setConnectionRequestTimeout(5000)
@@ -264,7 +270,9 @@ public class MonitorController {
     private  String  getDeatiPageByStyleColor(String style_color) throws IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
         String url="https://api.nike.com/product_feed/threads/v2?filter=exclusiveAccess(true,false))&filter=channelId(d9a5bc42-4b9c-4976-858a-f159cf99c647)&filter=marketplace(CN)&filter=language(zh-Hans)&searchTerms="+style_color;
-        MyIp myIp=IProxy.getIp();
+        //MyIp myIp=IProxy.getIp();
+        String myIp = "pmgr-customer-c_182ca94e.zproxy.lum-superproxy.io";
+        String myPort = "24000";        
         CloseableHttpResponse response=null;
         String result=null;
         try{
@@ -277,7 +285,8 @@ public class MonitorController {
             httpget.setHeader("accept-language", "zh-Hans-CN;q=1.0, en-CN;q=0.9");
             httpget.setHeader("content-type", "application/json; charset=utf-8");
             RequestConfig requestConfig = RequestConfig.custom()
-                    .setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                    //.setProxy(new HttpHost(myIp.getIp(),myIp.getPort()))//设置代理
+                    .setProxy(new HttpHost(myIp,myPort))//设置代理
                     .setConnectTimeout(5000)//设置连接超时时间,单位毫秒
                     .setSocketTimeout(5000)//设置读取超时时间,单位毫秒
                     .setConnectionRequestTimeout(5000)
@@ -332,7 +341,7 @@ public class MonitorController {
                 }
                 flushDB(monitors);
             } catch (Exception e) {
-                logger.error("单个的出现错误忽略,本轮错误数字:");
+                logger.error("A single error is ignored, the number of errors in this round:");
             }
         }
     }
@@ -447,7 +456,7 @@ public class MonitorController {
                 }
                 total++;
             }catch (Exception e){
-                logger.error("大监控-更新数据到数据库-出错!如果不是太连续出错,问题不大!",e);
+                logger.error("Big monitoring-update data to the database-error! If the error is not too continuous, the problem is not big!",e);
             }
         return total;
     }
@@ -488,7 +497,7 @@ public class MonitorController {
                 }
                 total++;
             }catch (Exception e){
-                logger.error("大监控-更新数据到数据库-出错!如果不是太连续出错,问题不大!",e);
+                logger.error("Big monitoring-update data to the database-error! If the error is not too continuous, the problem is not big!",e);
             }
         }
         return total;

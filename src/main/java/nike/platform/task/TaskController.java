@@ -32,7 +32,7 @@ public class TaskController {
 
 
     /***
-     * 删除操作采用同步操作，也就是直接把对应的redis也删除掉：
+     * The delete operation adopts a synchronous operation, that is, directly delete the corresponding redis：
      * @param model
      * @param taskId
      * @return
